@@ -34,7 +34,7 @@ const AuthContext = ({ children }) => {
             setUser(currentUser)
             setLoader(false);
             if (currentUser) {
-                axios.post('http://localhost:2500/jwt', logger, { withCredentials: true })
+                axios.post('https://car-doctor-biddut-roys-projects.vercel.app/jwt', logger, { withCredentials: true })
                     .then((res) => {
                         console.log(res.data);
                     })
@@ -43,7 +43,7 @@ const AuthContext = ({ children }) => {
                     });
             }
             else{
-                axios.post('http://localhost:2500/logout', logger, { withCredentials: true })
+                axios.post('https://car-doctor-biddut-roys-projects.vercel.app/logout', logger, { withCredentials: true })
                 .then(res => {
                     console.log(res.data);
                 })

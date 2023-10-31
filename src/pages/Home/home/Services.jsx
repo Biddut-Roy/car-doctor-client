@@ -8,7 +8,7 @@ const Services = () => {
     // const [services, setServices] = useState([])
 
     // useEffect(() => {
-        // fetch("http://localhost:2500/services")
+        // fetch("https://car-doctor-biddut-roys-projects.vercel.app/services")
         // .then(res => res.json())
         // .then(data => setServices(data))
     // }, [])
@@ -16,7 +16,7 @@ const Services = () => {
     const { isPending, error, data: services } = useQuery({
         queryKey: ['repoData'],
         queryFn: () =>
-            fetch('http://localhost:2500/services').then(
+            fetch('https://car-doctor-biddut-roys-projects.vercel.app/services').then(
                 (res) => res.json(),
             ),
     })

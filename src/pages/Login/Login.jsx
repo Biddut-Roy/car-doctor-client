@@ -25,7 +25,7 @@ const Login = () => {
         navigate(location?.state ? location?.state : "/")
         console.log(userCredential.user);
         // const user = { email }
-        // axios.post("http://localhost:2500/jwt", user, { withCredentials: true })
+        // axios.post("https://car-doctor-biddut-roys-projects.vercel.app/jwt", user, { withCredentials: true })
         //   .then((res) => {
         //     if (res.data.success) {
         //       navigate(location?.state ? location?.state : "/")

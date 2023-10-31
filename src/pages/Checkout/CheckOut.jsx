@@ -30,7 +30,7 @@ const CheckOut = () => {
 
         }
 
-        fetch("http://localhost:2500/checkout",{
+        fetch("https://car-doctor-biddut-roys-projects.vercel.app/checkout",{
             method: 'POST',
             body: JSON.stringify(order),
             headers: {

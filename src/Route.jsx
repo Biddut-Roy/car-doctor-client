@@ -29,7 +29,7 @@ import PrivateRoute from "./Authprovider/PrivateRoute";
         {
             path: "/checkout/:id",
             element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-            loader: ({params})=>fetch(`http://localhost:2500/services/${params.id}`)
+            loader: ({params})=>fetch(`https://car-doctor-biddut-roys-projects.vercel.app/services/${params.id}`)
           },
           {
             path: "/Booking",

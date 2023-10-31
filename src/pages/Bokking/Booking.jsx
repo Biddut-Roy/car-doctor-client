@@ -15,7 +15,7 @@ const Booking = () => {
     useEffect(() => {
         axiosShort.get(`/checkout?email=${user?.email}`)
         .then(res => setBooking(res.data))
-        // fetch("http://localhost:2500/checkout")
+        // fetch("https://car-doctor-biddut-roys-projects.vercel.app/checkout")
         //     .then((res) => res.json())
         //     .then((data) => {
         //         setBooking(data)
@@ -25,7 +25,7 @@ const Booking = () => {
     const handelDelete = id => {
         const process = confirm(`Are you sure you want to delete`)
         if (process) {
-            fetch(`http://localhost:2500/checkout/${id}`,{
+            fetch(`https://car-doctor-biddut-roys-projects.vercel.app/checkout/${id}`,{
                 method: 'DELETE',
             })
                 .then((res) => res.json())
@@ -41,7 +41,7 @@ const Booking = () => {
     }
 
     const handelBookingUpdate = id =>{
-        fetch(`http://localhost:2500/checkout/${id}`,{
+        fetch(`https://car-doctor-biddut-roys-projects.vercel.app/checkout/${id}`,{
             method: 'PATCH',
             body: JSON.stringify({status: 'confirm'}),
             headers: {
