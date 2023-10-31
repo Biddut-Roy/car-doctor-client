@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import BookingTableRow from "./BookingTableRow";
-import axios from "axios";
+// import axios from "axios";
 import { GlobalContext } from "../../Authprovider/AuthContext";
+import useAxios from "../../Hooks/useAxios";
 
 
 
@@ -9,16 +10,17 @@ import { GlobalContext } from "../../Authprovider/AuthContext";
 const Booking = () => {
     const {user} = useContext(GlobalContext);
     const [booking, setBooking] = useState([])
+    const axiosShort = useAxios()
 
     useEffect(() => {
-        axios.get(`http://localhost:2500/checkout?email=${user?.email}`,{withCredentials:true})
+        axiosShort.get(`/checkout?email=${user?.email}`)
         .then(res => setBooking(res.data))
         // fetch("http://localhost:2500/checkout")
         //     .then((res) => res.json())
         //     .then((data) => {
         //         setBooking(data)
         //     });
-    }, [])
+    }, [user?.email  , axiosShort])
 
     const handelDelete = id => {
         const process = confirm(`Are you sure you want to delete`)
